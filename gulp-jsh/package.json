@@ -1,0 +1,19 @@
+{
+  "name": "gulp-jsh",
+  "version": "0.1.0",
+  "description": "gulp tpl loader",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "edonet",
+    "gulp",
+    "jsh"
+  ],
+  "author": "lifx",
+  "license": "ISC",
+  "devDependencies": {
+    "jsh-loader": "^0.2.0"
+  }
+}
