@@ -3,7 +3,6 @@
 // Load plugins
 var path = require('path'),
     gulp = require('gulp'),
-    walk = require('gulp-walk'),
 
     // sass
     sass = require('gulp-sass'),
@@ -11,12 +10,7 @@ var path = require('path'),
 
     // jsh
     jsh = require('gulp-jsh'),
-
-    minifycss = require('gulp-minify-css'),
-    uglify = require('gulp-uglify'),
-    imagemin = require('gulp-imagemin'),
-    rename = require('gulp-rename'),
-    concat = require('gulp-concat');
+    rename = require('gulp-rename');
 
 
 // Styles
@@ -56,29 +50,4 @@ gulp.task('tpl', function () {
             extname: '.js'
         }))
         .pipe(gulp.dest(dest));
-});
-
-
-// Scripts
-gulp.task('js', function() {
-    return gulp.src('javascripts/*.js')
-        .pipe(concat('all.js'))
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(uglify())
-        .pipe(gulp.dest('assets'));
-});
-
-
-// Images
-gulp.task('images', function() {
-    return gulp.src('images/*')
-        .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-        .pipe(gulp.dest('images'));
-});
-
-
-// Default task
-gulp.task('default', function() {
-
-    // gulp.start('sass', 'js', 'images');
 });
